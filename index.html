@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Aavriti — thoughtful, earth-friendly gifts made to leave a lasting impression.">
+<title>Aavriti | Thoughtful Gifts, Naturally</title>
+<style>
+:root{
+  --forest:#244D3B; --forest-deep:#173729; --sage:#DCE7D8;
+  --cream:#F8F5EC; --paper:#FFFDF7; --terracotta:#B96D4A;
+  --gold:#C7A96B; --ink:#26362D; --muted:#6D786F; --line:#E5E4D9;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.nav-wrap{background:rgba(248,245,236,.96);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;backdrop-filter:blur(10px)}
+nav{max-width:1160px;margin:auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-family:Georgia,'Times New Roman',serif;font-size:30px;letter-spacing:2px;color:var(--forest);font-weight:bold}
+.brand small{display:block;font:10px Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-top:-4px}
+.nav-links{display:flex;align-items:center;gap:28px;font-size:13px;color:#425247}
+.nav-links a:hover{color:var(--terracotta)}
+.nav-cta,.btn{display:inline-block;background:var(--forest);color:white;padding:12px 20px;border-radius:3px;font-size:13px;letter-spacing:.3px;transition:.2s}
+.nav-cta:hover,.btn:hover{background:var(--forest-deep);transform:translateY(-1px)}
+.hero{max-width:1160px;margin:auto;padding:70px 24px 74px;display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:55px}
+.eyebrow{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--terracotta);font-weight:bold}
+h1,h2,h3,p{margin-top:0}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:clamp(42px,5vw,68px);line-height:1.07;letter-spacing:-1.6px;color:var(--forest);margin:18px 0 22px}
+h1 em{font-weight:normal;color:var(--terracotta)}
+.hero-copy{font-size:16px;color:var(--muted);max-width:470px;margin-bottom:28px}
+.hero-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.text-link{font-size:13px;color:var(--forest);border-bottom:1px solid var(--gold);padding-bottom:3px}
+.hero-art{min-height:450px;position:relative;display:flex;align-items:center;justify-content:center}
+.art-bg{position:absolute;inset:18px 0 0 25px;background:var(--sage);border-radius:48% 48% 5px 5px}
+.gift-scene{position:relative;width:100%;max-width:470px;height:420px;overflow:hidden;border-radius:48% 48% 4px 4px;background:linear-gradient(145deg,#e8d9b9,#c5d2b9 70%,#a7b89c)}
+.sun{position:absolute;width:170px;height:170px;background:#f6e6bd;border-radius:50%;top:45px;right:50px;opacity:.9}
+.leaf{position:absolute;background:#52785c;border-radius:100% 0 100% 0;transform:rotate(-35deg)}
+.leaf.one{width:110px;height:190px;left:20px;bottom:28px;transform:rotate(-30deg)}
+.leaf.two{width:82px;height:145px;left:90px;bottom:15px;transform:rotate(12deg);background:#6c8d6b}
+.leaf.three{width:95px;height:170px;right:10px;bottom:35px;transform:rotate(25deg);background:#3e674c}
+.stem{position:absolute;width:3px;height:245px;background:#42644a;left:100px;bottom:8px;transform:rotate(-10deg)}
+.gift-box{position:absolute;width:230px;height:175px;background:#e7d7b8;left:50%;top:48%;transform:translate(-50%,-25%) rotate(-4deg);box-shadow:0 18px 24px #344d3833;border:1px solid #d2c29f}
+.gift-box:before{content:"";position:absolute;left:45%;height:100%;width:25px;background:var(--terracotta);opacity:.92}
+.gift-box:after{content:"";position:absolute;top:42%;height:24px;width:100%;background:#c58a66}
+.box-lid{position:absolute;width:250px;height:35px;left:50%;top:41%;transform:translateX(-50%) rotate(-4deg);background:#f3e5c9;border:1px solid #d7c7a7;box-shadow:0 7px 12px #344d3820}
+.ribbon{position:absolute;left:47%;top:31%;width:52px;height:65px;border:8px solid var(--terracotta);border-radius:50% 50% 0 50%;transform:rotate(24deg)}
+.ribbon:after{content:"";position:absolute;width:52px;height:65px;border:8px solid var(--terracotta);border-radius:50% 50% 50% 0;left:18px;top:-7px;transform:rotate(-48deg)}
+.tag{position:absolute;bottom:25px;right:22px;background:var(--paper);padding:12px 16px;font:italic 15px Georgia,serif;color:var(--forest);box-shadow:0 5px 18px #26362d18}
+.hero-stamp{position:absolute;left:-2px;top:55px;width:100px;height:100px;border:1px solid #fff9;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--forest);font:12px Georgia,serif;line-height:1.3;transform:rotate(-12deg);background:#fff5d766}
+.promise{background:var(--forest);color:#f9f5e9}
+.promise-inner{max-width:1160px;margin:auto;padding:22px 24px;display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
+.promise span{font-size:12px;letter-spacing:.6px;color:#f1ead9}
+.section{max-width:1160px;margin:auto;padding:82px 24px}
+.section-heading{text-align:center;max-width:650px;margin:0 auto 42px}
+h2{font:normal clamp(32px,4vw,44px)/1.15 Georgia,'Times New Roman',serif;color:var(--forest);margin:12px 0 14px}
+.section-heading p{color:var(--muted);font-size:14px}
+.gift-list{max-width:850px;margin:0 auto;border-top:1px solid var(--line)}
+.gift-line{display:flex;align-items:flex-start;gap:20px;padding:23px 8px;border-bottom:1px solid var(--line)}
+.blockprint{flex:0 0 38px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;color:#244D3B;font-size:25px;line-height:1;position:relative;margin-top:2px}
+.blockprint:before{content:"";position:absolute;inset:2px;border:1px solid #78917A;transform:rotate(45deg)}
+.gift-line h3{font:normal 22px Georgia,serif;color:var(--forest);margin:0 0 5px}
+.gift-line p{font-size:13px;color:var(--muted);margin:0;max-width:680px}
+.story{background:#e9eee4}
+.story-inner{max-width:1160px;margin:auto;padding:70px 24px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.story-art{height:330px;background:linear-gradient(135deg,#d4dfcb,#f1e5ce);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.story-art .circle{width:230px;height:230px;border:1px solid #8ba085;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font:italic 30px/1.15 Georgia,serif;color:var(--forest);padding:35px}
+.story-art .little-leaf{position:absolute;font-size:95px;color:#648362;left:20px;bottom:-18px;transform:rotate(-25deg)}
+.story-art .little-leaf.right{left:auto;right:10px;top:0;bottom:auto;transform:rotate(35deg)}
+.story-copy p{font-size:14px;color:var(--muted)}
+.values{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:25px 0}
+.value{border-top:1px solid #cdd7c8;padding-top:12px}
+.value strong{display:block;font:18px Georgia,serif;color:var(--forest);margin-bottom:4px}
+.value span{font-size:12px;color:var(--muted)}
+.contact{max-width:900px;margin:0 auto;padding:78px 24px;text-align:center}
+.contact p{color:var(--muted);font-size:14px;max-width:550px;margin:0 auto 25px}
+.contact-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn-outline{display:inline-block;padding:11px 18px;border:1px solid var(--forest);color:var(--forest);font-size:13px;border-radius:3px}
+footer{background:var(--forest-deep);color:#e7e6d9;padding:28px 24px}
+.footer-inner{max-width:1160px;margin:auto;display:flex;justify-content:space-between;gap:15px;align-items:center;flex-wrap:wrap}
+footer .brand{color:#f5f0e2;font-size:24px}
+footer small{font-size:11px;color:#c5d0c5}
+
+
+
+.card-art.special-moments{background:linear-gradient(135deg,#E9DFD0,#F6EBDD)}
+.special-combo{width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:24px}
+.pichwai-rect-box{width:240px;height:150px;position:relative;filter:drop-shadow(0 12px 10px #26362d25);transform:rotate(-2deg);margin-top:15px}
+.pichwai-rect-lid{position:absolute;z-index:2;top:0;left:-4px;width:248px;height:42px;border:3px solid #C7A96B;background:#244D3B;display:flex;align-items:center;justify-content:space-around;color:#E8C77B;box-shadow:inset 0 0 0 3px #244D3B,inset 0 0 0 4px #D2B56D}
+.pichwai-rect-lid span{font-size:20px}.pichwai-rect-lid i{font:italic 30px Georgia,serif;color:#D9E0C9;transform:rotate(90deg)}
+.pichwai-rect-front{position:absolute;top:40px;left:3px;width:234px;height:110px;background:#28523E;border:3px solid #C7A96B;box-shadow:inset 0 0 0 4px #28523E,inset 0 0 0 5px #D2B56D;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#E8C77B}
+.pichwai-rect-front:before{content:"";position:absolute;inset:8px;border:1px solid #D9B96A;pointer-events:none}
+.pichwai-rect-front strong{font:16px Georgia,serif;letter-spacing:2px}.pichwai-rect-front small{font:8px Arial,sans-serif;letter-spacing:2px;color:#F4E6C5}.pichwai-rect-front span{font-size:17px}
+@media(max-width:760px){
+ .nav-links{display:none}.hero{grid-template-columns:1fr;padding-top:48px;gap:28px}.hero-art{min-height:350px}.gift-scene{height:330px}.gift-box{width:190px;height:145px}.box-lid{width:210px}.hero-stamp{width:78px;height:78px;font-size:10px}
+ .gift-line{gap:14px;padding:20px 2px}.gift-line h3{font-size:20px}.story-inner{grid-template-columns:1fr;gap:32px;padding:52px 24px}.story-art{height:280px}.promise-inner{justify-content:center;gap:10px 24px}.section{padding:58px 24px}
+}
+</style>
+</head>
+<body>
+<div class="nav-wrap">
+  <nav>
+    <a class="brand" href="#home">Aavriti<small>Thoughtful by nature</small></a>
+    <div class="nav-links"><a href="#collections">Collections</a><a href="#story">Our philosophy</a><a href="#contact">Contact</a></div>
+    <a class="nav-cta" href="#contact">Create a gift</a>
+  </nav>
+</div>
+<main id="home">
+<section class="hero">
+  <div>
+    <div class="eyebrow">Gifting with meaning</div>
+    <h1>Little gifts.<br><em>Lasting goodness.</em></h1>
+    <p class="hero-copy">Thoughtfully chosen gifts that bring people closer to nature. Discover simple, beautiful ways to celebrate, appreciate and make every moment matter.</p>
+    <div class="hero-actions"><a class="btn" href="#collections">Explore our collections</a><a class="text-link" href="#story">The Aavriti philosophy&nbsp; ↗</a></div>
+  </div>
+  <div class="hero-art" aria-label="Illustration of an earth-toned gift box surrounded by leaves">
+    <div class="art-bg"></div>
+    <div class="gift-scene"><div class="sun"></div><div class="leaf one"></div><div class="leaf two"></div><div class="leaf three"></div><div class="stem"></div><div class="gift-box"></div><div class="box-lid"></div><div class="ribbon"></div><div class="tag">A little joy,<br>beautifully wrapped</div></div>
+    <div class="hero-stamp">GIVE<br>WITH<br>CARE ✳</div>
+  </div>
+</section>
+<div class="promise"><div class="promise-inner"><span>✳ Thoughtful details</span><span>✳ Nature-inspired choices</span><span>✳ Made for meaningful moments</span><span>✳ Personalised gifting</span></div></div>
+<section class="section" id="collections">
+  <div class="section-heading"><div class="eyebrow">The collection</div><h2>Small gestures, thoughtfully gathered.</h2><p>From little Thank You gifts to keepsakes for special occasions, find a thoughtful way to say “you matter.”</p></div>
+  <div class="gift-list">
+    <div class="gift-line"><span class="blockprint" aria-hidden="true">✥</span><div><h3>Seeds of Goodness</h3><p>Plantable gifts and seed-inspired keepsakes that carry a little promise of tomorrow.</p></div></div>
+    <div class="gift-line"><span class="blockprint" aria-hidden="true">✥</span><div><h3>Thank You</h3><p>Warm, considered tokens for guests, clients, new beginnings and everyday appreciation.</p></div></div>
+    <div class="gift-line"><span class="blockprint" aria-hidden="true">✥</span><div><h3>Earthful Gifting</h3><p>Nature-inspired gift ideas with a calm, timeless look and a personal touch.</p></div></div>
+    <div class="gift-line"><span class="blockprint" aria-hidden="true">✥</span><div><h3>Special Moments</h3><p>Return gifts for life’s special moments — thoughtfully chosen for every occasion and every style.</p></div></div>
+  </div>
+</section>
+<section class="story" id="story"><div class="story-inner">
+  <div class="story-art"><div class="circle">A little more<br>meaning in<br>every gift.</div><div class="little-leaf">❧</div><div class="little-leaf right">❧</div></div>
+  <div class="story-copy"><div class="eyebrow">A note from Aavriti</div><h2>Thoughtfulness is the real gift.</h2><p>At Aavriti, we believe a gift can be more than an object. It can express gratitude, celebrate a connection and leave someone with a feeling they remember.</p><p>From nature-inspired keepsakes to traditional treasures, contemporary finds and thoughtful everyday gifts, we bring together choices for every taste, occasion and budget.</p><p>Our approach is simple: choose with care, present with beauty and make each gesture feel personal.</p>
+  <div class="values"><div class="value"><strong>Considered</strong><span>Every detail has a purpose.</span></div><div class="value"><strong>Nature-led</strong><span>Inspired by the world around us.</span></div><div class="value"><strong>Personal</strong><span>Made to feel special to the receiver.</span></div><div class="value"><strong>Meaningful</strong><span>Designed around the moment.</span></div></div>
+  <a class="text-link" href="#contact">Let's create something lovely&nbsp; ↗</a></div>
+</div></section>
+<section class="contact" id="contact"><div class="eyebrow">Let's make it personal</div><h2>A thoughtful gift starts with a conversation.</h2><p>Planning return gifts, Thank You gifts or a small custom collection? Tell us about the occasion and we'll explore ideas together.</p>
+<p style="margin:20px auto 0;color:var(--forest);font-size:13px;line-height:1.9"><strong style="font-size:24px;font-family:Georgia,serif;letter-spacing:.3px">Contact</strong><br>WhatsApp: +91 91135 88387<br>Email: aavriti.tech.one@gmail.com</p></section>
+</main>
+<footer><div class="footer-inner"><a class="brand" href="#home">Aavriti</a><small>Thoughtful by nature · Made with care</small><small>© 2026 Aavriti. All rights reserved.</small></div></footer>
+</body>
+</html>
